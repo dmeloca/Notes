@@ -57,3 +57,17 @@ Some LLMs has access to APIs that could help exploiting secondary vulnerabilites
 
 ## Insecure output handling
 This occurs when the LLM's response is not sufficiently validated before being passed to other systems. This could helo to access additional functionalities, or helping to get XSS and CSRF.
+
+# Indirect prompt injection
+Could be delivered via:
+
+- Directly (via message)
+- Indirectly (training data or output from an API)
+
+This injections enable LLMs attack other users.
+
+> [!IMPORTANT]
+> You could ask a LLM to describe a web page with a hidden prompt inside that could lead to craft an XSS payload.
+
+> [!TIP]
+> Some LLMs could understand that they should ignore instructions, but it could be bypassed by confusing the LLM using fake markup as an indirect prompt. Another way, is to include fake user responses in the prompt.
